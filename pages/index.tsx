@@ -7,7 +7,7 @@ import type { NextPage } from "next";
 import { trpc } from "../utils/trpc";
 
 const Home: NextPage = () => {
-  const { data, isLoading } = trpc.useQuery(["getAllPosts"]);
+  const { data, isLoading } = trpc.useQuery(["posts.get-all"]);
 
   if (isLoading || !data) {
     return <div>loading...</div>;
